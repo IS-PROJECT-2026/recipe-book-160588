@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/firestore";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyD4Fq_PrdCB0nI1OTWOlKYvXITP53m5soE",
   authDomain: "recipe-book-web-8fece.firebaseapp.com",
