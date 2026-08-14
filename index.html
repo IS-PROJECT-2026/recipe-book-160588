@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Baking | Recipe Book</title>
+  <meta name="description" content="A community recipe book for bakers who love accuracy, creativity, and delicious results.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__text">
+          Baking
+          <small>Recipe Book</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="add.html" class="btn btn--primary btn--header">
+        <span>+</span> Add Your Recipe
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================= HERO ============================= -->
+  <section class="hero">
+    <div class="hero__content">
+      <h1>Bake with Precision,<br>Share with Passion. <span class="hero__heart">♡</span></h1>
+      <p>A community recipe book for bakers who love accuracy, creativity, and delicious results.</p>
+      <a href="categories.html" class="btn btn--primary">Browse Recipes →</a>
+    </div>
+    <div class="hero__image">
+      <img src="assets/img/hero-cake.png" alt="Layered chocolate cake with piped frosting">
+    </div>
+  </section>
+
+  <!-- ============================= FEATURED RECIPES ============================= -->
+  <section class="recipes-section" id="recipes">
+    <div class="section-heading">
+      <h2>Featured Recipes</h2>
+      <p>Explore recipes shared by our baking community</p>
+    </div>
+
+    <div class="recipes-grid" id="recipesGrid">
+      <!-- Recipe cards are injected here by recipe.js -->
+      <!-- Loading state shown by default until Firestore responds -->
+      <div class="recipes-state" id="recipesState">
+        <p class="recipes-state__title">Loading Recipes...</p>
+        <p class="recipes-state__subtitle">Fetching delicious bakes for you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= CTA BANNER ============================= -->
+  <section class="cta-banner">
+    <div class="cta-banner__text">
+      <h3>Share Your Bake with the World!</h3>
+      <p>Have a favorite recipe? Add it to our collection and inspire other bakers.</p>
+    </div>
+    <a href="add.html" class="btn btn--primary">
+      <span>+</span> Add Your Recipe
+    </a>
+  </section>
+
+  <!-- ============================= INFO STRIP ============================= -->
+  <section class="info-strip">
+    <div class="info-card">
+      <p class="info-card__title">Loading Recipes...</p>
+      <p class="info-card__subtitle">Fetching delicious bakes for you.</p>
+    </div>
+    <div class="info-card">
+      <p class="info-card__title">No recipes found yet.</p>
+      <p class="info-card__subtitle">Be the first to add one and start our collection!</p>
+    </div>
+    <div class="info-card">
+      <p class="info-card__title">Baking Tip</p>
+      <p class="info-card__subtitle">Precision in measurements leads to perfection in every bite. ♡</p>
+    </div>
+  </section>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">Baking Recipe Book</p>
+      <p class="site-footer__copyright">© 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================= SCRIPTS ============================= -->
+  <script type="module" src="src/firebase.js"></script>
+  <script type="module" src="src/recipe.js"></script>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
