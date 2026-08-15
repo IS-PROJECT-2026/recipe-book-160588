@@ -9,15 +9,15 @@ const recipesGrid = document.getElementById("recipesGrid");
 
 // Fallback image per category, used until each recipe document has its own imageUrl
 const CATEGORY_FALLBACK_IMG = {
-  Cakes: "assets/img/fallback-cake.jpg",
-  Cookies: "assets/img/fallback-cookie.jpg",
-  Breads: "assets/img/fallback-bread.jpg",
-  Cupcakes: "assets/img/fallback-cupcake.jpg",
-  Brownies: "assets/img/fallback-brownie.jpg",
-  Cheesecakes: "assets/img/fallback-cheesecake.jpg",
-  Pastries: "assets/img/fallback-pastry.jpg",
-  "Quick Breads": "assets/img/fallback-quickbread.jpg",
-  default: "assets/img/fallback-recipe.jpg",
+  Cakes: "assets/img/fallback-cake.png",
+  Cookies: "assets/img/fallback-cookie.png",
+  Breads: "assets/img/fallback-bread.png",
+  Cupcakes: "assets/img/fallback-cupcake.png",
+  Brownies: "assets/img/fallback-brownie.png",
+  Cheesecakes: "assets/img/fallback-cheesecake.png",
+  Pastries: "assets/img/fallback-pastry.png",
+  "Quick Breads": "assets/img/fallback-quickbread.png",
+  default: "assets/img/fallback-recipe.png",
 };
 
 /**

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe | Baking</title>
+  <meta name="description" content="View full recipe details, ingredients, and steps.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__text">
+          Baking
+          <small>Recipe Book</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html">Categories</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="add.html" class="btn btn--primary btn--header">
+        <span>+</span> Add Your Recipe
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================= RECIPE DETAIL ============================= -->
+  <main class="recipe-detail" id="recipeDetail">
+    <!-- recipe.js injects the loading / error / recipe content here -->
+    <div class="recipe-detail__state" id="recipeState">
+      <h2>Loading recipe...</h2>
+      <p>Fetching the details for you.</p>
+    </div>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">Baking Recipe Book</p>
+      <p class="site-footer__copyright">© 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================= SCRIPTS ============================= -->
+  <script type="module" src="src/firebase.js"></script>
+  <script type="module" src="src/recipe.js"></script>
+</body>
+</html>
