@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Recipe | Baking</title>
-  <meta name="description" content="View full recipe details, ingredients, and steps.">
+  <title>Recipe | Baking Recipe Book</title>
+  <meta name="description" content="View full recipe details, ingredients, and instructions.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -43,14 +43,27 @@
     </div>
   </header>
 
-  <!-- ============================= RECIPE DETAIL ============================= -->
-  <main class="recipe-detail" id="recipeDetail">
-    <!-- recipe.js injects the loading / error / recipe content here -->
-    <div class="recipe-detail__state" id="recipeState">
+  <!-- ============================= BREADCRUMB + HERO + INGREDIENTS/INSTRUCTIONS ============================= -->
+  <!-- Everything inside #recipeDetail is rendered dynamically by recipe.js -->
+  <main id="recipeDetail">
+    <div class="detail-state" id="recipeState">
       <h2>Loading recipe...</h2>
       <p>Fetching the details for you.</p>
     </div>
   </main>
+
+  <!-- ============================= LOVE THIS RECIPE (static) ============================= -->
+  <section class="love-banner">
+    <div class="love-banner__icon" aria-hidden="true">🥣<span>♡</span><span>♡</span></div>
+    <div class="love-banner__text">
+      <h3>Love this recipe?</h3>
+      <p>Save it to your favorites and share it with your fellow baking lovers!</p>
+    </div>
+    <button class="btn btn--primary" id="saveRecipeBtn">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 1 0-7.8 7.8l1 1L12 21l7.8-7.8 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+      Save Recipe
+    </button>
+  </section>
 
   <!-- ============================= FOOTER ============================= -->
   <footer class="site-footer">
