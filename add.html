@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Your Recipe | Baking</title>
+  <meta name="description" content="Share your delicious bakes with our community.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__text">
+          Baking
+          <small>Recipe Book</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </nav>
+
+      <a href="add.html" class="btn btn--primary btn--header active">
+        <span>+</span> Add Your Recipe
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================= FORM HERO ============================= -->
+  <section class="form-hero">
+    <div class="form-hero__content">
+      <h1>Add Your Recipe <span class="form-hero__heart">♡</span></h1>
+      <p>Share your delicious bakes with our community. Fill in the details below to get started.</p>
+    </div>
+    <div class="form-hero__image">
+      <img src="assets/img/add-recipe-hero.png" alt="Bowl of flour, eggs, and a whisk">
+    </div>
+  </section>
+
+  <!-- ============================= FORM ============================= -->
+  <main class="form-page">
+    <form id="recipeForm" class="recipe-form" novalidate>
+
+      <!-- Status banner for save success / error -->
+      <div class="form-banner" id="formBanner" hidden></div>
+
+      <!-- ===================== Basic Information ===================== -->
+      <fieldset class="form-section">
+        <legend class="form-section__legend">
+          <span class="form-section__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="16" y2="15"/></svg>
+          </span>
+          Basic Information
+        </legend>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="title">Recipe Title <span class="required">*</span></label>
+            <input type="text" id="title" name="title" placeholder="e.g. Vanilla Buttercream Cupcakes" required>
+          </div>
+
+          <div class="form-field">
+            <label for="category">Category <span class="required">*</span></label>
+            <select id="category" name="category" required>
+              <option value="" selected disabled>Select a category</option>
+              <option value="Cakes">Cakes</option>
+              <option value="Cookies">Cookies</option>
+              <option value="Breads">Breads</option>
+              <option value="Cupcakes">Cupcakes</option>
+              <option value="Brownies">Brownies</option>
+              <option value="Cheesecakes">Cheesecakes</option>
+              <option value="Pastries">Pastries</option>
+              <option value="Quick Breads">Quick Breads</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="description">Short Description <span class="required">*</span></label>
+            <textarea id="description" name="description" rows="3" maxlength="160" placeholder="A brief description of your recipe..." required></textarea>
+            <div class="form-field__footer">
+              <span class="form-field__hint">This will appear on the recipe card.</span>
+              <span class="form-field__counter" id="descriptionCounter">0/160</span>
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="yieldAmount">Yield <span class="required">*</span></label>
+            <input type="text" id="yieldAmount" name="yieldAmount" placeholder="e.g. 12 cupcakes" required>
+            <span class="form-field__hint">e.g. 12 cupcakes, 1 loaf, 24 cookies</span>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="prepTime">Prep Time</label>
+            <input type="text" id="prepTime" name="prepTime" placeholder="e.g. 20 mins">
+          </div>
+
+          <div class="form-field">
+            <label for="bakeTime">Bake Time</label>
+            <input type="text" id="bakeTime" name="bakeTime" placeholder="e.g. 18 mins">
+          </div>
+
+          <div class="form-field">
+            <label for="difficulty">Difficulty</label>
+            <select id="difficulty" name="difficulty">
+              <option value="" selected disabled>Select difficulty</option>
+              <option value="Easy">Easy</option>
+              <option value="Medium">Medium</option>
+              <option value="Hard">Hard</option>
+            </select>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ===================== Recipe Image ===================== -->
+      <fieldset class="form-section">
+        <legend class="form-section__legend">
+          <span class="form-section__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          </span>
+          Recipe Image
+        </legend>
+
+        <div class="form-field">
+          <label for="imageUrlInput">Image URL (Optional)</label>
+          <input type="url" id="imageUrlInput" name="imageUrlInput" placeholder="https://example.com/beautiful-cake.jpg">
+          <span class="form-field__hint">Paste a direct link to an image from the web. Leave blank to use a default illustration.</span>
+        </div>
+      </fieldset>
+
+      <!-- ===================== Ingredients ===================== -->
+      <fieldset class="form-section">
+        <legend class="form-section__legend">
+          <span class="form-section__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><line x1="8" y1="11" x2="16" y2="11"/><line x1="8" y1="15" x2="16" y2="15"/></svg>
+          </span>
+          Ingredients
+        </legend>
+
+        <div class="form-row form-row--ingredients">
+          <div class="form-field">
+            <label for="ingredients">Ingredients (one per line) <span class="required">*</span></label>
+            <textarea id="ingredients" name="ingredients" rows="9" placeholder="e.g.&#10;1 1/4 cups all-purpose flour&#10;1 1/4 tsp baking powder&#10;1/4 tsp salt&#10;1/2 cup unsalted butter, softened&#10;3/4 cup granulated sugar&#10;2 large eggs&#10;2 tsp vanilla extract&#10;1/2 cup whole milk" required></textarea>
+            <span class="form-field__hint">Write each ingredient on a new line.</span>
+          </div>
+
+          <div class="form-field">
+            <label for="ingredientGroups">Ingredient Grouping (Optional)</label>
+            <span class="form-field__hint form-field__hint--top">Group your ingredients (e.g., <em>For the Cupcakes</em>, <em>For the Frosting</em>)</span>
+            <textarea id="ingredientGroups" name="ingredientGroups" rows="7" placeholder="e.g.&#10;For the Cupcakes:&#10;(list ingredients)&#10;&#10;For the Buttercream:&#10;(list ingredients)"></textarea>
+            <span class="form-field__hint">Leave blank if not grouping.</span>
+          </div>
+        </div>
+      </fieldset>
+
+      <!-- ===================== Instructions ===================== -->
+      <fieldset class="form-section">
+        <legend class="form-section__legend">
+          <span class="form-section__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg>
+          </span>
+          Instructions
+        </legend>
+
+        <div class="form-field">
+          <label for="steps">Step-by-Step Instructions <span class="required">*</span></label>
+          <textarea id="steps" name="steps" rows="8" placeholder="e.g.&#10;1. Preheat the oven to 350°F (175°C) and line a 12-cup muffin tin with cupcake liners.&#10;2. In a bowl, whisk together flour, baking powder, and salt.&#10;3. In a large bowl, beat butter and sugar until light and fluffy. Add eggs one at a time, then mix in vanilla.&#10;4. Gradually add the dry ingredients, alternating with milk. Mix until just combined.&#10;5. Divide the batter evenly among liners, filling each about 2/3 full.&#10;6. Bake for 16–18 minutes or until a toothpick comes out clean. Let cool completely.&#10;7. For the buttercream: Beat butter until creamy. Gradually add powdered sugar, then add cream, vanilla, and salt.&#10;8. Frost the cooled cupcakes and enjoy!" required></textarea>
+          <span class="form-field__hint">Number each step for best results.</span>
+        </div>
+      </fieldset>
+
+      <!-- ===================== Actions ===================== -->
+      <div class="form-actions">
+        <button type="button" class="btn btn--outline" id="cancelBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          Cancel
+        </button>
+        <button type="submit" class="btn btn--primary" id="saveBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" width="16" height="16"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+          <span id="saveBtnText">Save Recipe</span>
+        </button>
+      </div>
+
+    </form>
+  </main>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">🥄 Precision Baking Recipe Book</p>
+      <p class="site-footer__copyright">© 2025 All rights reserved.</p>
+      <div class="site-footer__social">
+        <a href="#" aria-label="Facebook">f</a>
+        <a href="#" aria-label="Instagram">ig</a>
+        <a href="#" aria-label="Pinterest">p</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================= SCRIPTS ============================= -->
+  <script type="module" src="src/firebase.js"></script>
+  <script type="module" src="src/form.js"></script>
+</body>
+</html>
