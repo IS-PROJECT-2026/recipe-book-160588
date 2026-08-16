@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categories | Sharlet's Baking</title>
+  <meta name="description" content="Explore delicious baking recipes by category.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-beige">
+
+  <!-- ============================= HEADER ============================= -->
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a href="index.html" class="logo">
+        <span class="logo__text">
+          Sharlet's Baking
+          <small>RECIPE BOOK</small>
+        </span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="categories.html" class="active">Categories</a></li>
+        </ul>
+      </nav>
+
+      <a href="add.html" class="btn btn--primary btn--header">
+        <span>+</span> Add Your Recipe
+      </a>
+    </div>
+  </header>
+
+  <!-- ============================= HERO ============================= -->
+  <section class="cat-hero">
+    <div class="cat-hero__content">
+      <h1>Browse Categories <span class="cat-hero__heart">♡</span></h1>
+      <p>Find the perfect bake for every craving.<br>Explore recipes by category.</p>
+    </div>
+    <!-- Decorative Wave -->
+    <svg class="cat-hero__wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" preserveAspectRatio="none">
+      <path d="M0,60 C320,120 420,0 720,60 C1020,120 1120,0 1440,60 L1440,120 L0,120 Z" fill="#faf7f2"></path>
+    </svg>
+  </section>
+
+  <!-- ============================= GRID SECTION ============================= -->
+  <main class="cat-main">
+    <div class="cat-section-header">
+      <div class="cat-section-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 13.87A4 4 0 0 1 7.41 6a5.11 5.11 0 0 1 1.05-1.54 5 5 0 0 1 7.08 0A5.11 5.11 0 0 1 16.59 6 4 4 0 0 1 18 13.87V21H6Z"/><line x1="6" y1="17" x2="18" y2="17"/></svg>
+      </div>
+      <h2>All Recipe Categories</h2>
+      <p>Click a category to discover delicious recipes.</p>
+    </div>
+
+    <!-- JS will render cards here -->
+    <div class="categories-grid" id="categoriesGrid"></div>
+  </main>
+
+  <!-- ============================= CTA BANNER ============================= -->
+  <section class="cat-cta">
+    <div class="cat-cta__inner">
+      <div class="cat-cta__icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#d98c21" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <div class="cat-cta__text">
+        <h3>Can't find what you're looking for?</h3>
+        <p>Be the first to add a new recipe and inspire fellow bakers!</p>
+      </div>
+      <a href="add.html" class="btn btn--primary">+ Add Your Recipe</a>
+    </div>
+  </section>
+
+  <!-- ============================= FEATURES ============================= -->
+  <section class="cat-features">
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <div>
+        <h4>Made by Bakers</h4>
+        <p>A community collection of tested and loved recipes.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      <div>
+        <h4>Share the Love</h4>
+        <p>Share your bakes and spread the joy of baking.</p>
+      </div>
+    </div>
+    <div class="feature-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <div>
+        <h4>Quality Recipes</h4>
+        <p>Every recipe is crafted with precision and care.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= FOOTER ============================= -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__brand">Sharlet's Baking Recipe Book</p>
+      <p class="site-footer__copyright">© 2026 All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ============================= RECIPE MODAL ============================= -->
+  <div class="modal-overlay" id="categoryModal" hidden>
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">×</button>
+      <h3 class="modal-title" id="modalTitle">Category Name</h3>
+      <div class="modal-recipe-list" id="modalRecipeList">
+        <!-- JS will inject recipe links here -->
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="src/categories.js"></script>
+</body>
+</html>
