@@ -1481,3 +1481,403 @@ button {
     padding: 0;
   }
 }
+
+/* ==========================================================================
+   CATEGORIES PAGE STYLES
+   ========================================================================== */
+
+.bg-beige {
+  background-color: #faf7f2;
+}
+
+/* --- Hero Section --- */
+.cat-hero {
+  position: relative;
+  background-image: url('../img/add-recipe-hero.png'); /* Swap with your wide image if you have one */
+  background-size: cover;
+  background-position: center;
+  padding: 100px 5% 150px;
+  display: flex;
+  align-items: center;
+}
+
+.cat-hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(90deg, rgba(250,247,242,0.95) 40%, rgba(250,247,242,0.4) 100%);
+  z-index: 1;
+}
+
+.cat-hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+}
+
+.cat-hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  color: #3d2b1f;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cat-hero__heart {
+  color: #f6b856;
+  font-size: 2.5rem;
+  font-family: sans-serif;
+}
+
+.cat-hero p {
+  font-size: 1.1rem;
+  color: #5c4b41;
+  line-height: 1.6;
+}
+
+.cat-hero__wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 3;
+  display: block;
+}
+
+/* --- Main Content Header --- */
+.cat-main {
+  padding: 40px 5% 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cat-section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.cat-section-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 10px;
+  color: #5c4b41;
+}
+
+.cat-section-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.2rem;
+  color: #3d2b1f;
+  margin-bottom: 10px;
+  position: relative;
+  display: inline-block;
+}
+
+.cat-section-header h2::before,
+.cat-section-header h2::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 1px;
+  background-color: #d7c9bb;
+}
+
+.cat-section-header h2::before { left: -60px; }
+.cat-section-header h2::after { right: -60px; }
+
+.cat-section-header p {
+  color: #5c4b41;
+}
+
+/* --- Category Grid & Cards --- */
+.categories-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+.cat-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.cat-card__img-wrap {
+  position: relative;
+  height: 200px;
+  background: #eee;
+}
+
+.cat-card__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cat-card__icon {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 46px;
+  height: 46px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  color: #5c4b41;
+}
+
+.cat-card__icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.cat-card__body {
+  padding: 40px 20px 25px;
+  text-align: center;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cat-card__body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  color: #3d2b1f;
+  margin-bottom: 8px;
+}
+
+.cat-card__body p {
+  font-size: 0.9rem;
+  color: #5c4b41;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  flex-grow: 1;
+}
+
+.cat-card__count {
+  color: #f6b856;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+/* --- CTA Banner --- */
+.cat-cta {
+  max-width: 1200px;
+  margin: 0 auto 60px;
+  padding: 0 5%;
+}
+
+.cat-cta__inner {
+  background-color: #fef7ec;
+  border-radius: 16px;
+  padding: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.cat-cta__icon {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.cat-cta__text {
+  flex-grow: 1;
+  padding: 0 30px;
+}
+
+.cat-cta__text h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #3d2b1f;
+  margin-bottom: 5px;
+}
+
+.cat-cta__text p {
+  color: #5c4b41;
+}
+
+/* --- Features Bar --- */
+.cat-features {
+  max-width: 1200px;
+  margin: 0 auto 80px;
+  padding: 40px 5%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  border-top: 1px solid #eae1d7;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.feature-item svg {
+  width: 32px;
+  height: 32px;
+  color: #3d2b1f;
+  flex-shrink: 0;
+}
+
+.feature-item h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #3d2b1f;
+  margin-bottom: 5px;
+}
+
+.feature-item p {
+  font-size: 0.9rem;
+  color: #5c4b41;
+  line-height: 1.4;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 1024px) {
+  .categories-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .categories-grid { grid-template-columns: repeat(2, 1fr); }
+  .cat-hero h1 { font-size: 2.2rem; }
+  .cat-cta__inner { flex-direction: column; text-align: center; gap: 20px; }
+  .cat-cta__text { padding: 0; }
+  .cat-features { grid-template-columns: 1fr; border-top: none; padding-top: 0; }
+}
+
+@media (max-width: 480px) {
+  .categories-grid { grid-template-columns: 1fr; }
+}
+/* ==========================================================================
+   CATEGORY MODAL STYLES
+   ========================================================================== */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(61, 43, 31, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.modal-overlay[hidden] {
+  display: none;
+}
+
+.modal-content {
+  background: #ffffff;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  padding: 30px;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #5c4b41;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.modal-close:hover {
+  color: #d98c21;
+}
+
+.modal-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: #3d2b1f;
+  margin-bottom: 20px;
+  padding-right: 30px;
+  border-bottom: 1px solid #eae1d7;
+  padding-bottom: 15px;
+}
+
+.modal-recipe-list {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 5px; /* space for scrollbar */
+}
+
+.modal-recipe-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #eae1d7;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.modal-recipe-item:hover {
+  background: #fef7ec;
+  border-color: #d98c21;
+  transform: translateX(4px);
+}
+
+.modal-recipe-item img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.modal-recipe-item h4 {
+  font-size: 1.05rem;
+  color: #3d2b1f;
+  margin-bottom: 4px;
+}
+
+.modal-recipe-item p {
+  font-size: 0.85rem;
+  color: #5c4b41;
+}
+
+.modal-empty {
+  text-align: center;
+  color: #5c4b41;
+  padding: 30px 0;
+  font-style: italic;
+}
